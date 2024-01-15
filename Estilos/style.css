@@ -37,6 +37,9 @@ section#login {
     height: 500px;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.452);
+
+    transition: width 0.3s, height .3s;
+    transition-timing-function: ease;
 }
 
 /*OBS: A diferença para usar o position e o background-position é: o position serve para posicionar o elemento na página, neste caso a section com id login, que está baseada no main que possui o position relative (Que é o padrão). Posicionada é colocado o top, left com 50% cada e o transform:translate com -50% cada também, para centralizar o elemento que fará com que o elemento se centralize na página. Já o background- position serce para posicionar a imagem, usando a combinação que neste exercicio foi usado left e bottom (Vide exercicios anteriores que possui a ordem para posicionar imagens no backgroud-position). */

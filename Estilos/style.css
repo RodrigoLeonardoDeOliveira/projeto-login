@@ -6,3 +6,51 @@
     Lilás: #5f2c82
 */
 
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: #5f2c82;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+section#login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden; /*Essa declaração serve para deixar que tudo fique por dentro da borda, que neste caso é a imagem de fundo da URL imagens/porta.jpg que está abaixo, que manterá a borda arredondada por causa do border-radius.*/
+
+    background-color: white;
+    width: 250px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.452);
+}
+
+/*OBS: A diferença para usar o position e o background-position é: o position serve para posicionar o elemento na página, neste caso a section com id login, que está baseada no main que possui o position relative (Que é o padrão). Posicionada é colocado o top, left com 50% cada e o transform:translate com -50% cada também, para centralizar o elemento que fará com que o elemento se centralize na página. Já o background- position serce para posicionar a imagem, usando a combinação que neste exercicio foi usado left e bottom (Vide exercicios anteriores que possui a ordem para posicionar imagens no backgroud-position). */
+
+section#login > div#imagem {
+    display: block;
+    background: #5f2c82 url(../Imagens/porta.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 200px;
+}
+
+section#login > div#formulario {
+    display: block;
+    padding: 10px;
+}
+

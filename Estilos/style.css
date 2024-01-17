@@ -29,7 +29,7 @@ section#login {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    
     overflow: hidden; /*Essa declaração serve para deixar que tudo fique por dentro da borda, que neste caso é a imagem de fundo da URL imagens/porta.jpg que está abaixo, que manterá a borda arredondada por causa do border-radius.*/
 
     background-color: white;
@@ -38,8 +38,10 @@ section#login {
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.452);
 
+    transform: translate(-50%, -50%); /*Obs: Faça sempre o transform e transition sempre por último, ultima declaração como neste caso, para não dar bug*/
     transition: width 0.3s, height .3s;
-    transition-timing-function: ease;
+    transition-timing-function: ease; /*Essa declaração é utilizada para deixar o efeito de transição mais suave. */
+    
 }
 
 /*OBS: A diferença para usar o position e o background-position é: o position serve para posicionar o elemento na página, neste caso a section com id login, que está baseada no main que possui o position relative (Que é o padrão). Posicionada é colocado o top, left com 50% cada e o transform:translate com -50% cada também, para centralizar o elemento que fará com que o elemento se centralize na página. Já o background- position serce para posicionar a imagem, usando a combinação que neste exercicio foi usado left e bottom (Vide exercicios anteriores que possui a ordem para posicionar imagens no backgroud-position). */
@@ -68,15 +70,41 @@ div#formulario > p {
 
 form > div.campo {
     background-color: #5f2c82;
+    border: 2px solid #5f2c82;
     display: block;
     width: 100%;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 8px;
     margin: 5px 0px;
 }
 
 div.campo > label {
     display: none;
+}
+
+div.campo > span {
+    color: white;
+    /*background-color: black;*/
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input {
+    background-color: #6de0dd;
+    font-size: 1em;
+    width: calc(100% - 45px); /*Formula de calculo para encaixar a o width dentro da caixa email e password.*/
+    height: 100%;
+    
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-12px); /*Obs: Faça sempre o transform e transition sempre por último, ultima declaração como neste caso, para não dar bug*/
+}
+
+div.campo > input:focus-within { /*Para ganhar foco quando estiver digitando no espaço do imput, neste caso email e senha pois tem a mesma class que é campo. */
+
+    background-color: white;
 }
 
 form > input[type=submit] {
